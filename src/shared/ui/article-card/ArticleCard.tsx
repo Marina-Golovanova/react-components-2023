@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IArticleCard } from "../../domain/interfaces";
 
 import styles from "./article-card.module.scss";
@@ -31,7 +32,7 @@ export default class ArticleCard extends React.Component<IArticleCard> {
             </div>
 
             <div>
-              <a href={this.props.articleUrl}>Read more</a>
+              <Link to={this.props.articleUrl}>Read more</Link>
             </div>
           </div>
         </div>

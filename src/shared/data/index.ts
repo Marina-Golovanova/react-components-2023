@@ -17,7 +17,7 @@ for (let i = 0; i < 100; i++) {
       lastName: faker.name.lastName(),
       imageUrl: faker.image.avatar(),
     },
-    articleUrl: "#",
+    articleUrl: faker.lorem.word(),
   };
 
   articles.push(article);

@@ -7,6 +7,7 @@ import styles from "./input-search.module.scss";
 
 interface InputSearchProps {
   placeholder: string;
+  defaultValue: string;
   onSearch: (value: string) => void;
 }
 
@@ -20,7 +21,8 @@ export default class InputSearch extends React.Component<InputSearchProps> {
       <div className={styles.inputSearchLayout}>
         <InputText
           placeholder={this.props.placeholder}
-          onChange={(e) => this.handleInputChange(e.target.value)}
+          defaultValue={this.props.defaultValue}
+          onChange={(e) => this.props.onSearch(e.target.value)}
           onKeyDown={this.handleInputEnter}
         >
           <SearchIcon className={styles.inputSearchIcon} />
@@ -33,9 +35,9 @@ export default class InputSearch extends React.Component<InputSearchProps> {
     );
   }
 
-  handleInputChange = (value: string) => {
-    this.setState((state) => ({ ...state, inputValue: value }));
-  };
+  // handleInputChange = (value: string) => {
+  //   this.setState((state) => ({ ...state, inputValue: value }));
+  // };
 
   handleInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {

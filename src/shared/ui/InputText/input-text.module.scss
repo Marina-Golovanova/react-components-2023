@@ -1,0 +1,33 @@
+.inputLayout {
+  height: 60px;
+  display: flex;
+}
+
+.relativeInputLayout {
+  position: relative;
+}
+
+.input {
+  background-color: var(--hun-solo);
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  color: var(--chewbacca);
+
+  &::placeholder {
+    color: var(--luke-skywalker);
+    font-weight: var(--font-weight-2);
+  }
+}
+
+.inputChildren {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

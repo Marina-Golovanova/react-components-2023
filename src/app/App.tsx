@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Layout>
-        <InputSearch placeholder="Search" onSearch={(value) => {}} />
+        <InputSearch placeholder="Search" onSearch={() => {}} />
       </Layout>
     );
   }

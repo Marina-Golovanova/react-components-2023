@@ -5,6 +5,7 @@ export interface IAuthor {
 }
 
 export interface IArticleCard {
+  id: string;
   title: string;
   imgUrl: string;
   tag: string;

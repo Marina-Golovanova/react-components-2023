@@ -1,0 +1,12 @@
+.button {
+  height: 60px;
+  background-color: var(--chewbacca);
+  color: var(--hun-solo);
+  font-weight: var(--font-weight-3);
+  font-size: var(--font-size-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  border-radius: 16px;
+}

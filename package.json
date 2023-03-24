@@ -1,0 +1,60 @@
+{
+  "name": "react-components-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --port 3000",
+    "build": "NODE_ENV=production webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marina-Golovanova/react-components-2023.git"
+  },
+  "author": "Marina Golovanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marina-Golovanova/react-components-2023/issues"
+  },
+  "homepage": "https://github.com/Marina-Golovanova/react-components-2023#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@faker-js/faker": "^7.6.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/uuid": "^9.0.1",
+    "babel-loader": "^9.1.2",
+    "classnames": "^2.3.2",
+    "css-loader": "^6.7.3",
+    "css-modules-typescript-loader": "^4.0.1",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.59.3",
+    "sass-loader": "^13.2.1",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
+    "uuid": "^9.0.0",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.9.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

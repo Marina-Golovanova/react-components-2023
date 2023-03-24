@@ -1,0 +1,15 @@
+.inputSearchLayout {
+  display: flex;
+  gap: 15px;
+  background-color: var(--princess-leia);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.inputSearchIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--chewbacca);
+}

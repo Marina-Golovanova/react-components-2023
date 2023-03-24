@@ -1,0 +1,19 @@
+.headerListLayout {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 30px;
+}
+
+.headerItem {
+  font-weight: var(--font-weight-2);
+  font-size: var(--font-size-medium);
+
+  &:hover {
+    border-bottom: 1px solid #000;
+  }
+}
+
+.headerItemActive {
+  border-bottom: 1px solid #000;
+}

@@ -1,0 +1,24 @@
+.label {
+  border: 2px solid var(--yoda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  font-size: var(--font-size-small);
+
+  &:hover {
+    background-color: var(--yoda);
+    color: var(--hun-solo);
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

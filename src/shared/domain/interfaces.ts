@@ -14,3 +14,14 @@ export interface IArticleCard {
   author: IAuthor;
   articleUrl: string;
 }
+
+export type IFormItem = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  birthDate: string;
+  country: string;
+  agreePromotion: boolean;
+  agree: boolean;
+  photoUrl: string;
+};

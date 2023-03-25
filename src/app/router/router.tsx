@@ -1,3 +1,4 @@
+import { FormPage } from "../../pages/form-page/FormPage";
 import { createBrowserRouter } from "react-router-dom";
 import { AboutUsPage } from "../../pages/about-us-page/AboutUsPage";
 import { ArticlesPage } from "../../pages/articles-page/ArticlesPage";
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
   {
     path: routes.aboutUs,
     element: <AboutUsPage />,
+  },
+  {
+    path: routes.form,
+    element: <FormPage />,
   },
   {
     path: "*",

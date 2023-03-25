@@ -1,6 +1,6 @@
 import React from "react";
 import { IArticleCard } from "../../domain/interfaces";
-import ArticleCard from "../article-card/ArticleCard";
+import { ArticleCard } from "../article-card/ArticleCard";
 
 import styles from "./articles.module.scss";
 
@@ -8,7 +8,7 @@ interface ArticlesProps {
   articles: IArticleCard[];
 }
 
-export default class Articles extends React.Component<ArticlesProps> {
+export class Articles extends React.Component<ArticlesProps> {
   render() {
     return (
       <div className={styles.articlesLayout}>

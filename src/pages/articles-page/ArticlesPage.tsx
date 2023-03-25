@@ -1,13 +1,15 @@
 import React from "react";
-import Layout from "../../shared/ui/layout/Layout";
-import InputSearch from "../../shared/ui/input-search/InputSearch";
-import Articles from "../../shared/ui/articles/Articles";
+import { Layout } from "../../shared/ui/layout/Layout";
+import { InputSearch } from "../../shared/ui/input-search/InputSearch";
+import { Articles } from "../../shared/ui/articles/Articles";
 import { articles } from "../../shared/data";
 
-export default class ArticlesPage extends React.Component {
+type PropsType = Record<string, never>;
+
+export class ArticlesPage extends React.Component {
   state: { inputValue: string };
 
-  constructor(props: any) {
+  constructor(props: PropsType) {
     super(props);
 
     this.state = {

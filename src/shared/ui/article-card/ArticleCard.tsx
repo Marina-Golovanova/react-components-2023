@@ -4,7 +4,7 @@ import { IArticleCard } from "../../domain/interfaces";
 
 import styles from "./article-card.module.scss";
 
-export default class ArticleCard extends React.Component<IArticleCard> {
+export class ArticleCard extends React.Component<IArticleCard> {
   authorFullName = `${this.props.author.firstName} ${this.props.author.lastName}`;
 
   render() {

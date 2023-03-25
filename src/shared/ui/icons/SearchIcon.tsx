@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class SearchIcon extends React.Component<
+export class SearchIcon extends React.Component<
   React.SVGAttributes<SVGSVGElement>
 > {
   render() {

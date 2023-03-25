@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./button.module.scss";
 
-export default class Button extends React.Component<
+export class Button extends React.Component<
   React.ButtonHTMLAttributes<HTMLButtonElement>
 > {
   render() {

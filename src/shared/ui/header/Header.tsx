@@ -5,7 +5,7 @@ import { routes } from "../../../app/constants";
 
 import styles from "./header.module.scss";
 
-export default class Header extends React.Component {
+export class Header extends React.Component {
   render() {
     return (
       <header>

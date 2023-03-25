@@ -1,7 +1,7 @@
 import React from "react";
-import InputText from "../input-text/InputText";
-import SearchIcon from "../icons/SearchIcon";
-import Button from "../button/Button";
+import { InputTextRefProvider } from "../input-text/InputText";
+import { SearchIcon } from "../icons/SearchIcon";
+import { Button } from "../button/Button";
 
 import styles from "./input-search.module.scss";
 
@@ -11,7 +11,7 @@ interface InputSearchProps {
   onSearch: (value: string) => void;
 }
 
-export default class InputSearch extends React.Component<InputSearchProps> {
+export class InputSearch extends React.Component<InputSearchProps> {
   state = {
     inputValue: "",
   };
@@ -19,14 +19,14 @@ export default class InputSearch extends React.Component<InputSearchProps> {
   render() {
     return (
       <div className={styles.inputSearchLayout}>
-        <InputText
+        <InputTextRefProvider
           placeholder={this.props.placeholder}
           defaultValue={this.props.defaultValue}
           onChange={(e) => this.props.onSearch(e.target.value)}
           onKeyDown={this.handleInputEnter}
         >
           <SearchIcon className={styles.inputSearchIcon} />
-        </InputText>
+        </InputTextRefProvider>
 
         <Button onClick={() => this.props.onSearch(this.state.inputValue)}>
           Search

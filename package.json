@@ -1,12 +1,12 @@
 {
   "name": "react-components-2023",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "webpack serve --port 3000",
-    "build": "NODE_ENV=production webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "babel-loader": "^9.1.2",
     "classnames": "^2.3.2",
     "css-loader": "^6.7.3",
@@ -33,6 +35,9 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
     "mini-css-extract-plugin": "^2.7.5",
@@ -42,9 +47,8 @@
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
     "uuid": "^9.0.0",
-    "webpack": "^5.76.2",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.1"
+    "vite": "^4.2.1",
+    "vite-plugin-html": "^3.2.0"
   },
   "dependencies": {
     "react": "^18.2.0",

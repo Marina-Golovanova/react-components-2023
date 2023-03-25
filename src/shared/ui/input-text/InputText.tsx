@@ -28,7 +28,7 @@ class InputText extends React.Component<InputTextProps> {
         })}
       >
         <input
-          className={cn(styles.input, this.inputProps)}
+          className={cn(styles.input, this.inputProps.className)}
           type="text"
           ref={this.props.innerref}
           {...this.inputProps}
@@ -42,7 +42,7 @@ class InputText extends React.Component<InputTextProps> {
   }
 }
 
-export default React.forwardRef<
+export const InputTextRefProvider = React.forwardRef<
   HTMLInputElement,
   React.InputHTMLAttributes<HTMLInputElement>
 >((props, ref) => <InputText innerref={ref} inputprops={props} />);

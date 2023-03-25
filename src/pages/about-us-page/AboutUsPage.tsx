@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../shared/ui/layout/Layout";
+import { Layout } from "../../shared/ui/layout/Layout";
 
-export default class AboutUsPage extends React.Component {
+export class AboutUsPage extends React.Component {
   render() {
     return (
       <Layout>

@@ -14,6 +14,10 @@ type IInputSearchProps = {
 export const InputSearch: React.FC<IInputSearchProps> = (props) => {
   const [inputValue, setInputValue] = React.useState("");
 
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props.onSearch(e.target.value);
+  };
+
   const handleInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setInputValue(inputValue);
@@ -26,7 +30,7 @@ export const InputSearch: React.FC<IInputSearchProps> = (props) => {
       <InputText
         placeholder={props.placeholder}
         defaultValue={props.defaultValue}
-        onChange={(e) => props.onSearch(e.target.value)}
+        onChange={handleInput}
         onKeyDown={handleInputEnter}
       >
         <SearchIcon className={styles.inputSearchIcon} />

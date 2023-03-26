@@ -1,10 +1,10 @@
-export interface IAuthor {
+export type IAuthor = {
   firstName: string;
   lastName: string;
   imageUrl: string;
-}
+};
 
-export interface IArticleCard {
+export type IArticleCard = {
   id: string;
   title: string;
   imgUrl: string;
@@ -13,9 +13,9 @@ export interface IArticleCard {
   preview: string;
   author: IAuthor;
   articleUrl: string;
-}
+};
 
-export type IFormItem = {
+export type IUser = {
   id: string;
   firstName: string;
   lastName: string;

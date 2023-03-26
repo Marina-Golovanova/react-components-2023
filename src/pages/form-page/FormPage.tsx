@@ -1,17 +1,17 @@
 import React from "react";
 import { UserCards } from "../../shared/ui/user-cards/UserCards";
-import { IFormItem } from "../../shared/domain/interfaces";
 import { Form } from "../../shared/ui/form/Form";
 import { Layout } from "../../shared/ui/layout/Layout";
+
+import type { IUser } from "../../shared/domain/types";
 
 import styles from "./form-page.module.scss";
 
 export const FormPage: React.FC = () => {
-  const [userData, setUserData] = React.useState<IFormItem[]>([]);
+  const [userData, setUserData] = React.useState<IUser[]>([]);
 
-  const handleFormSubmit = (data: IFormItem) => {
+  const handleFormSubmit = (data: IUser) => {
     setUserData((it) => it.concat(data));
-    console.log(userData);
   };
 
   return (

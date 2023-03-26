@@ -1,42 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IArticleCard } from "../../domain/interfaces";
+import { IArticleCard } from "../../domain/types";
 
 import styles from "./article-card.module.scss";
 
-export class ArticleCard extends React.Component<IArticleCard> {
-  authorFullName = `${this.props.author.firstName} ${this.props.author.lastName}`;
+export const ArticleCard: React.FC<IArticleCard> = (props) => {
+  const authorFullName = `${props.author.firstName} ${props.author.lastName}`;
 
-  render() {
-    return (
-      <div className={styles.articleCardLayout}>
-        <img className={styles.articleImage} src={this.props.imgUrl} />
+  return (
+    <div className={styles.articleCardLayout}>
+      <img className={styles.articleImage} src={props.imgUrl} />
 
-        <div className={styles.articleCardContent}>
-          <div className={styles.articleCardHeader}>
-            <div className={styles.articleCardTag}>{this.props.tag}</div>
-            <div>{this.props.createdDate}</div>
+      <div className={styles.articleCardContent}>
+        <div className={styles.articleCardHeader}>
+          <div className={styles.articleCardTag}>{props.tag}</div>
+          <div>{props.createdDate}</div>
+        </div>
+
+        <div className={styles.articleCardTitle}>{props.title}</div>
+
+        <div className={styles.articleCardPreview}>{props.preview}</div>
+
+        <div className={styles.footer}>
+          <div className={styles.author}>
+            <img className={styles.authorImage} src={props.author.imageUrl} />
+            <div>{authorFullName}</div>
           </div>
 
-          <div className={styles.articleCardTitle}>{this.props.title}</div>
-
-          <div className={styles.articleCardPreview}>{this.props.preview}</div>
-
-          <div className={styles.footer}>
-            <div className={styles.author}>
-              <img
-                className={styles.authorImage}
-                src={this.props.author.imageUrl}
-              />
-              <div>{this.authorFullName}</div>
-            </div>
-
-            <div>
-              <Link to={this.props.articleUrl}>Read more</Link>
-            </div>
+          <div>
+            <Link to={props.articleUrl}>Read more</Link>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

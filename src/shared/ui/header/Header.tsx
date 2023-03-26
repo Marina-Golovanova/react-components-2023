@@ -39,30 +39,6 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
           ))}
-          {/* <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? cn(styles.headerItem, styles.headerItemActive)
-                  : styles.headerItem
-              }
-              to={routes.root}
-            >
-              Main
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink className={styles.headerItem} to={routes.aboutUs}>
-              About us
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink className={styles.headerItem} to={routes.form}>
-              Form
-            </NavLink>
-          </li> */}
         </ul>
       </nav>
     </header>

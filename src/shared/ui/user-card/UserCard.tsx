@@ -1,4 +1,4 @@
-import { IFormItem } from "../../../shared/domain/interfaces";
+import { IFormItem } from "../../domain/types";
 
 import styles from "./user-card.module.scss";
 

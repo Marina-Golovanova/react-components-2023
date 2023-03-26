@@ -4,38 +4,24 @@ import { InputSearch } from "../../shared/ui/input-search/InputSearch";
 import { Articles } from "../../shared/ui/articles/Articles";
 import { articles } from "../../shared/data";
 
-type PropsType = Record<string, never>;
+export const ArticlesPage: React.FC = () => {
+  const [inputValue, setInputValue] = React.useState(
+    localStorage.getItem("inputValue") || ""
+  );
 
-export class ArticlesPage extends React.Component {
-  state: { inputValue: string };
+  React.useEffect(() => {
+    return () => localStorage.setItem("inputValue", inputValue);
+  }, [inputValue]);
 
-  constructor(props: PropsType) {
-    super(props);
+  return (
+    <Layout>
+      <InputSearch
+        defaultValue={inputValue}
+        placeholder="Search"
+        onSearch={(value) => setInputValue(value)}
+      />
 
-    this.state = {
-      inputValue: localStorage.getItem("inputValue") || "",
-    };
-  }
-
-  componentDidUpdate() {
-    localStorage.setItem("inputValue", this.state.inputValue);
-  }
-
-  render() {
-    return (
-      <Layout>
-        <InputSearch
-          defaultValue={this.state.inputValue}
-          placeholder="Search"
-          onSearch={this.handleInputValueChange}
-        />
-
-        <Articles articles={articles} />
-      </Layout>
-    );
-  }
-
-  handleInputValueChange = (value: string) => {
-    this.setState((state) => ({ ...state, inputValue: value }));
-  };
-}
+      <Articles articles={articles} />
+    </Layout>
+  );
+};

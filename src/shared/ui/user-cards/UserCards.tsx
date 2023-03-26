@@ -1,6 +1,6 @@
 import { UserCard } from "../user-card/UserCard";
 
-import type { IFormItem } from "../../../shared/domain/interfaces";
+import type { IFormItem } from "../../domain/types";
 
 import styles from "./user-cards.module.scss";
 

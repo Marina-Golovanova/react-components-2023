@@ -1,8 +1,8 @@
-import { IFormItem } from "../../domain/types";
+import { IUser } from "../../domain/types";
 
 import styles from "./user-card.module.scss";
 
-export const UserCard: React.FC<IFormItem> = (props) => {
+export const UserCard: React.FC<IUser> = (props) => {
   const fullName = `${props.firstName} ${props.lastName}`;
 
   return (

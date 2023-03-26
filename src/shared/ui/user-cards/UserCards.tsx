@@ -1,11 +1,11 @@
 import { UserCard } from "../user-card/UserCard";
 
-import type { IFormItem } from "../../domain/types";
+import type { IUser } from "../../domain/types";
 
 import styles from "./user-cards.module.scss";
 
 export type IUserCardsProps = {
-  userData: IFormItem[];
+  userData: IUser[];
 };
 
 export const UserCards: React.FC<IUserCardsProps> = (props) => {

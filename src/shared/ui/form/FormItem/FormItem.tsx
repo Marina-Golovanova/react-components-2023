@@ -7,11 +7,11 @@ export type IFormItemProps = {
   tag: "input" | "select";
   field: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent) => void;
   name: string;
   type?: string;
   error?: string;
   options?: string[];
+  onChange?: (e: React.ChangeEvent) => void;
 };
 
 export const FormItem = React.forwardRef<HTMLElement, IFormItemProps>(

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import { FormItem } from "./FormItem/FormItem";
-import { IFormItem } from "../../domain/types";
+import { IUser } from "../../domain/types";
 import { Button } from "../button/Button";
 import { Switcher } from "../switcher/Switcher";
 import { Checkbox } from "../checkbox/Checkbox";
@@ -11,7 +11,7 @@ import { InputFile } from "../input-file/InputFile";
 import styles from "./form.module.scss";
 
 export type IFormProps = {
-  onSubmit: (data: IFormItem) => void;
+  onSubmit: (data: IUser) => void;
 };
 
 export const Form: React.FC<IFormProps> = (props) => {
@@ -20,13 +20,13 @@ export const Form: React.FC<IFormProps> = (props) => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<IFormItem>({
+  } = useForm<IUser>({
     defaultValues: { country: "Russia", agreePromotion: false, agree: false },
   });
 
   const [imageUrl, setImageUrl] = React.useState("");
 
-  const onSubmit = (data: IFormItem) => {
+  const onSubmit = (data: IUser) => {
     reset();
     const id = uuidv4();
     props.onSubmit({ ...data, id, photoUrl: imageUrl });
@@ -56,6 +56,9 @@ export const Form: React.FC<IFormProps> = (props) => {
     register("agree", {
       validate: (value) =>
         value || "Please tick this box if you want to proceed",
+    });
+    register("photoUrl", {
+      validate: (value) => !!value.length || "Please select image",
     });
   }, [register]);
 
@@ -108,6 +111,7 @@ export const Form: React.FC<IFormProps> = (props) => {
         {...register("photoUrl")}
         accept="image/*"
         onChange={handleFileChange}
+        error={errors.photoUrl?.message}
       />
 
       <Button type="submit">Submit</Button>

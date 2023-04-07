@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { faker } from "@faker-js/faker";
-import { IArticleCard } from "../domain/interfaces";
+import { IArticleCard } from "../domain/types";
 
 export const articles: IArticleCard[] = [];
 

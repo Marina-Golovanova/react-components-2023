@@ -1,0 +1,20 @@
+.label {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  margin-right: 5px;
+}
+
+.checkboxError {
+  position: absolute;
+  top: 0;
+  color: var(--obi-wan-kenobi);
+  font-size: var(--font-size-tiny);
+  right: 72px;
+  width: 101px;
+  left: 110%;
+}

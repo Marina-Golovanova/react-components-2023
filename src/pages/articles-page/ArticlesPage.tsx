@@ -1,39 +1,27 @@
 import React from "react";
-import Layout from "../../shared/ui/layout/Layout";
-import InputSearch from "../../shared/ui/input-search/InputSearch";
-import Articles from "../../shared/ui/articles/Articles";
+import { Layout } from "../../shared/ui/layout/Layout";
+import { InputSearch } from "../../shared/ui/input-search/InputSearch";
+import { Articles } from "../../shared/ui/articles/Articles";
 import { articles } from "../../shared/data";
 
-export default class ArticlesPage extends React.Component {
-  state: { inputValue: string };
+export const ArticlesPage: React.FC = () => {
+  const [inputValue, setInputValue] = React.useState(
+    localStorage.getItem("inputValue") || ""
+  );
 
-  constructor(props: any) {
-    super(props);
+  React.useEffect(() => {
+    return () => localStorage.setItem("inputValue", inputValue);
+  }, [inputValue]);
 
-    this.state = {
-      inputValue: localStorage.getItem("inputValue") || "",
-    };
-  }
+  return (
+    <Layout>
+      <InputSearch
+        defaultValue={inputValue}
+        placeholder="Search"
+        onSearch={(value) => setInputValue(value)}
+      />
 
-  componentDidUpdate() {
-    localStorage.setItem("inputValue", this.state.inputValue);
-  }
-
-  render() {
-    return (
-      <Layout>
-        <InputSearch
-          defaultValue={this.state.inputValue}
-          placeholder="Search"
-          onSearch={this.handleInputValueChange}
-        />
-
-        <Articles articles={articles} />
-      </Layout>
-    );
-  }
-
-  handleInputValueChange = (value: string) => {
-    this.setState((state) => ({ ...state, inputValue: value }));
-  };
-}
+      <Articles articles={articles} />
+    </Layout>
+  );
+};

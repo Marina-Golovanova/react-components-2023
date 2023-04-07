@@ -1,0 +1,29 @@
+.userCard {
+  width: 250px;
+  padding: 20px;
+  background-color: var(--princess-leia);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.userPhoto {
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.fullName {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-3);
+}
+
+.birthday {
+  font-weight: var(--font-weight-3);
+}
+
+.country {
+  color: var(--luke-skywalker);
+}

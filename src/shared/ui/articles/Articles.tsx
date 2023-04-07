@@ -1,21 +1,19 @@
 import React from "react";
-import { IArticleCard } from "../../domain/interfaces";
-import ArticleCard from "../article-card/ArticleCard";
+import { IArticleCard } from "../../domain/types";
+import { ArticleCard } from "../article-card/ArticleCard";
 
 import styles from "./articles.module.scss";
 
-interface ArticlesProps {
+type IArticlesProps = {
   articles: IArticleCard[];
-}
+};
 
-export default class Articles extends React.Component<ArticlesProps> {
-  render() {
-    return (
-      <div className={styles.articlesLayout}>
-        {this.props.articles.map((article) => (
-          <ArticleCard {...article} key={article.id} />
-        ))}
-      </div>
-    );
-  }
-}
+export const Articles: React.FC<IArticlesProps> = (props) => {
+  return (
+    <div className={styles.articlesLayout}>
+      {props.articles.map((article) => (
+        <ArticleCard {...article} key={article.id} />
+      ))}
+    </div>
+  );
+};

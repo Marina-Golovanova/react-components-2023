@@ -1,8 +1,8 @@
-import React from "react";
+import { FormPage } from "../../pages/form-page/FormPage";
 import { createBrowserRouter } from "react-router-dom";
-import AboutUsPage from "../../pages/about-us-page/AboutUsPage";
-import ArticlesPage from "../../pages/articles-page/ArticlesPage";
-import NotFoundPage from "../../pages/not-found-page/NotFoundPage";
+import { AboutUsPage } from "../../pages/about-us-page/AboutUsPage";
+import { ArticlesPage } from "../../pages/articles-page/ArticlesPage";
+import { NotFoundPage } from "../../pages/not-found-page/NotFoundPage";
 import { routes } from "../constants";
 
 export const router = createBrowserRouter([
@@ -13,6 +13,10 @@ export const router = createBrowserRouter([
   {
     path: routes.aboutUs,
     element: <AboutUsPage />,
+  },
+  {
+    path: routes.form,
+    element: <FormPage />,
   },
   {
     path: "*",

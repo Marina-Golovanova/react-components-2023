@@ -5,32 +5,42 @@ import { routes } from "../../../app/constants";
 
 import styles from "./header.module.scss";
 
-export default class Header extends React.Component {
-  render() {
-    return (
-      <header>
-        <nav>
-          <ul className={styles.headerListLayout}>
-            <li>
+const navItems = [
+  {
+    to: routes.root,
+    title: "Main",
+  },
+  {
+    to: routes.aboutUs,
+    title: "About us",
+  },
+  {
+    to: routes.form,
+    title: "Form",
+  },
+];
+
+export const Header: React.FC = () => {
+  return (
+    <header>
+      <nav>
+        <ul className={styles.headerListLayout}>
+          {navItems.map((section) => (
+            <li key={section.title}>
               <NavLink
                 className={({ isActive }) =>
                   isActive
                     ? cn(styles.headerItem, styles.headerItemActive)
                     : styles.headerItem
                 }
-                to={routes.root}
+                to={section.to}
               >
-                Main
+                {section.title}
               </NavLink>
             </li>
-            <li>
-              <NavLink className={styles.headerItem} to={routes.aboutUs}>
-                About us
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    );
-  }
-}
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
+};

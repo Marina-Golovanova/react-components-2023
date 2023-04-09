@@ -1,0 +1,31 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--ahsoka-tano);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  padding: 20px;
+  background-color: var(--princess-leia);
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.closeButton {
+  width: 24px;
+  height: 24px;
+  align-self: flex-end;
+  transition: scale 0.3s;
+
+  &:hover {
+    scale: 1.2;
+  }
+}

@@ -29,7 +29,7 @@ export const useCharacters = () => {
           setCurrentPage(data.pages);
         }
       })
-      .catch((e) => {
+      .catch(() => {
         setIsLoading(false);
         setIsLoaded(true);
       });

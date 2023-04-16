@@ -13,7 +13,7 @@ export const searchValueSlice = createSlice({
   name: "searchValue",
   initialState,
   reducers: {
-    changeSearchValue: (state, action: PayloadAction<string>) => ({
+    changeSearchValue: (_, action: PayloadAction<string>) => ({
       value: action.payload,
     }),
   },

@@ -5,7 +5,6 @@ import { Characters } from "../../shared/ui/characters/Characters";
 import { Pagination } from "../../shared/ui/pagination/Pagination";
 import { useCharacters } from "./hooks/useCharacters";
 import { Loader } from "../../shared/ui/loader/Loader";
-import { capitalizeString } from "./utils/capitalizeString";
 import {
   useAppDispatch,
   useAppSelector,
@@ -29,7 +28,7 @@ export const CharactersPage: React.FC = () => {
         defaultValue={inputValue}
         placeholder="Search"
         onChangeValue={(value) => dispatch(changeSearchValue(value))}
-        onSearch={() => name.setName(capitalizeString(inputValue))}
+        onSearch={() => name.setName(inputValue)}
       />
 
       {loader.isLoaded && (

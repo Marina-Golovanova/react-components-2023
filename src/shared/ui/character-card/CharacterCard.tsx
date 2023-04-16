@@ -1,5 +1,5 @@
 import React from "react";
-import { ICharacter } from "shared/domain/types";
+import { ICharacter } from "../../domain/types";
 import { ExtendedCharacterCard } from "../extended-character-card/ExtendedCharacterCard";
 import { Modal } from "../modal/Modal";
 import theLordOfRing from "./assets/the-lord-of-ring.jpeg";

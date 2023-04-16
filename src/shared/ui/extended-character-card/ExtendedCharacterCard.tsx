@@ -1,5 +1,5 @@
 import { InformationPoint } from "./information-point/InformationPoint";
-import type { ICharacter } from "shared/domain/types";
+import type { ICharacter } from "../../domain/types";
 
 import styles from "./extended-character-card.module.scss";
 

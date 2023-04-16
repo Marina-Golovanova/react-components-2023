@@ -1,44 +1,31 @@
 import React from "react";
-import { requestCharacters } from "../../../shared/api";
-import { ICharacter } from "../../../shared/domain/types";
+import { useGetCharactersQuery } from "../../../shared/domain/store/slices/apiSlice";
+import { useAppSelector } from "../../../shared/domain/store/hooks";
+import { selectSearchValue } from "../../../shared/domain/store/slices/searchValueSlice";
 
 export const useCharacters = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [isLoaded, setIsLoaded] = React.useState(false);
-
-  const [characters, setCharacters] = React.useState<ICharacter[]>([]);
-
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [totalPages, setTotalPages] = React.useState(1);
 
-  const [name, setName] = React.useState(
-    localStorage.getItem("inputValue") || ""
-  );
+  const [name, setName] = React.useState(useAppSelector(selectSearchValue));
 
-  React.useEffect(() => {
-    setIsLoading(true);
-    setIsLoaded(false);
-    requestCharacters({ page: currentPage, name })
-      .then((data) => {
-        setCharacters(data.characters);
-        setIsLoaded(true);
-        setIsLoading(false);
-        setTotalPages(data.pages);
+  const { data, isLoading, isSuccess } = useGetCharactersQuery({
+    page: currentPage,
+    name,
+  });
 
-        if (currentPage > data.pages) {
-          setCurrentPage(data.pages);
-        }
-      })
-      .catch(() => {
-        setIsLoading(false);
-        setIsLoaded(true);
-      });
-  }, [currentPage, name]);
+  if (isSuccess) {
+    return {
+      characters: data.characters,
+      pages: { currentPage, totalPages: data.pages, setCurrentPage },
+      name: { name, setName },
+      loader: { isLoading, isLoaded: isSuccess },
+    };
+  }
 
   return {
-    characters,
-    pages: { currentPage, totalPages, setCurrentPage },
+    characters: [],
+    pages: { currentPage, totalPages: 1, setCurrentPage },
     name: { name, setName },
-    loader: { isLoading, isLoaded },
+    loader: { isLoading, isLoaded: isSuccess },
   };
 };

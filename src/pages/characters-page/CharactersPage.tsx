@@ -5,26 +5,30 @@ import { Characters } from "../../shared/ui/characters/Characters";
 import { Pagination } from "../../shared/ui/pagination/Pagination";
 import { useCharacters } from "./hooks/useCharacters";
 import { Loader } from "../../shared/ui/loader/Loader";
-import { capitalizeString } from "./utils/capitalizeString";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../shared/domain/store/hooks";
+import {
+  changeSearchValue,
+  selectSearchValue,
+} from "../../shared/domain/store/slices/searchValueSlice";
 
 import styles from "./characters-page.module.scss";
 
 export const CharactersPage: React.FC = () => {
   const { characters, pages, name, loader } = useCharacters();
 
-  const [inputValue, setInputValue] = React.useState(name.name);
-
-  React.useEffect(() => {
-    return () => localStorage.setItem("inputValue", inputValue);
-  }, [inputValue]);
+  const inputValue = useAppSelector(selectSearchValue);
+  const dispatch = useAppDispatch();
 
   return (
     <Layout>
       <InputSearch
         defaultValue={inputValue}
         placeholder="Search"
-        onChangeValue={setInputValue}
-        onSearch={() => name.setName(capitalizeString(inputValue))}
+        onChangeValue={(value) => dispatch(changeSearchValue(value))}
+        onSearch={() => name.setName(inputValue)}
       />
 
       {loader.isLoaded && (

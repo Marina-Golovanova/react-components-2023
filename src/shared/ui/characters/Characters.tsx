@@ -1,7 +1,7 @@
 import React from "react";
 import { CharacterCard } from "../character-card/CharacterCard";
 
-import type { ICharacter } from "shared/domain/types";
+import type { ICharacter } from "../../domain/types";
 
 import styles from "./characters.module.scss";
 

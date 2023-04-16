@@ -15,7 +15,6 @@ export const InputFile = React.forwardRef<HTMLInputElement, IInputFileProps>(
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.files) {
         setIsImageSelected(true);
-        console.log(isImageSelected);
         if (props.onChange) {
           props.onChange(e);
         }

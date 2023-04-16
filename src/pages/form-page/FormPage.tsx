@@ -9,7 +9,7 @@ import {
 import {
   addUser,
   selectUsers,
-} from "../../shared/domain/store/slices/useSlice";
+} from "../../shared/domain/store/slices/userSlice";
 
 import type { IUser } from "../../shared/domain/types";
 

@@ -1,18 +1,15 @@
-export type IAuthor = {
-  firstName: string;
-  lastName: string;
-  imageUrl: string;
-};
-
-export type IArticleCard = {
+export type ICharacter = {
   id: string;
-  title: string;
-  imgUrl: string;
-  tag: string;
-  createdDate: string;
-  preview: string;
-  author: IAuthor;
-  articleUrl: string;
+  name: string;
+  height: string;
+  race: string;
+  gender: string;
+  birth: string;
+  spouse: string;
+  death: string;
+  realm: string;
+  wikiUrl: string;
+  hair: string;
 };
 
 export type IUser = {

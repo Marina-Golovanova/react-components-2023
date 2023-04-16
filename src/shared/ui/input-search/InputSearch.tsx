@@ -8,20 +8,18 @@ import styles from "./input-search.module.scss";
 type IInputSearchProps = {
   placeholder: string;
   defaultValue: string;
-  onSearch: (value: string) => void;
+  onSearch: () => void;
+  onChangeValue: (value: string) => void;
 };
 
 export const InputSearch: React.FC<IInputSearchProps> = (props) => {
-  const [inputValue, setInputValue] = React.useState("");
-
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    props.onSearch(e.target.value);
+    props.onChangeValue(e.target.value);
   };
 
   const handleInputEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setInputValue(inputValue);
-      props.onSearch(inputValue);
+      props.onSearch();
     }
   };
 
@@ -36,7 +34,7 @@ export const InputSearch: React.FC<IInputSearchProps> = (props) => {
         <SearchIcon className={styles.inputSearchIcon} />
       </InputText>
 
-      <Button onClick={() => props.onSearch(inputValue)}>Search</Button>
+      <Button onClick={props.onSearch}>Search</Button>
     </div>
   );
 };

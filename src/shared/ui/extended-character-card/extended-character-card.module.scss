@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+}
+
+.link {
+  color: var(--yoda);
+}
